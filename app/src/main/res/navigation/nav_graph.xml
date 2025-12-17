@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <!-- Welcome Screen -->
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.stm.ui.welcome.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+
+    <!-- Login Screen -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.stm.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Signup Screen -->
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.stm.ui.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Main App Screens -->
+
+    <!-- ... login and signup fragments ... -->
+
+    <!-- Dashboard Screen -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.stm.ui.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_sendEmailFragment"
+            app:destination="@id/sendEmailFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_checkSpamFragment"
+            app:destination="@id/checkSpamFragment" />
+    </fragment>
+
+    <!-- Send Email Screen -->
+    <fragment
+        android:id="@+id/sendEmailFragment"
+        android:name="com.example.stm.ui.sendemail.SendEmailFragment"
+        android:label="fragment_send_email"
+        tools:layout="@layout/fragment_send_email" >
+        <action
+            android:id="@+id/action_sendEmailFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_sendEmailFragment_to_checkSpamFragment"
+            app:destination="@id/checkSpamFragment" />
+    </fragment>
+
+    <!-- Check Spam Screen -->
+    <fragment
+        android:id="@+id/checkSpamFragment"
+        android:name="com.example.stm.ui.checkspam.CheckSpamFragment"
+        android:label="fragment_check_spam"
+        tools:layout="@layout/fragment_check_spam" >
+        <action
+            android:id="@+id/action_checkSpamFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_checkSpamFragment_to_sendEmailFragment"
+            app:destination="@id/sendEmailFragment" />
+    </fragment>
+
+</navigation>
