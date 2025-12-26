@@ -2,11 +2,11 @@ Project Title:
   Spam Shield ( Email Spam Detector and Tracker )
 
 Technologies:
-  Java
-  XML
+  *Java
+  *XML
 
 Services:
-  Allow user to check spam of email body.
-  Allow user to track email.
+  *Allow user to check spam of email body.
+  *Allow user to track email.
   
-Using WEB Backend Apis for proper functioning.
+*Using WEB Backend Apis for proper functioning.
